@@ -20,4 +20,8 @@ Feature: Beginning the Mission
 	And I close the browser
 	
 
+  #Scenario: Creating a Scenario
+	#Given I have something setup
+	#When I look at that setup
+	#Then I will see the setup
 	
