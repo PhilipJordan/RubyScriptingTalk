@@ -95,10 +95,10 @@ Then(/^((\d+)x(\d+)) will not (display a crater)$/) do |image_location, x, y, cr
 	#crater_name = 'Rover-N'
 	
 	#sub-second response
-	(on(MissionPage).map_contains? crater_name).should be false #.should be false 
+	(on(MissionPage).map_contains? crater_name).should be false  
 	
 	#15 second response
-	on(MissionPage).map_does_not_include_slow crater_name
+	#on(MissionPage).map_does_not_include_slow crater_name
 end
 
 Given(/^I create a crater at maximum distance$/) do 

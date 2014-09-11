@@ -57,35 +57,37 @@ Feature: Beginning the Mission
 	Scenario: Obstacles in front of rover
 		Given the Mission page
 		And I add an obstacle at 25x26
-		#And default obstacles on the map
 		When I send the forward command
 		Then the rover will still be at the center of the map
 	
 	Scenario: Obstacles behind the rover
 		Given the Mission page
 		And I add an obstacle at 25x24
-		#And default obstacles on the map
 		When I send the backward command
 		Then the rover will still be at the center of the map 
-	 
+	
+	@rockets
 	Scenario: Firing Rockets without obstacles
 		Given the Mission page 
 		When I fire a missile
 		Then 25x30 will display a crater
 	
+	@rockets
 	Scenario: Firing Rockets with obstacles
 		Given the Mission page
 		And I add an obstacle at 25x26 	
 		When I fire a missile
 		Then 25x26 will display the ground
 		And 25x30 will not display a crater
-		
+	
+	@rockets
 	Scenario: Firing Rockets at craters
 		Given the Mission page
 		And I create a crater at maximum distance
 		When I fire a missile
 		Then 25x30 will display a crater
 	
+	@rockets
 	Scenario: Firing Rockets over craters at obstacles
 		Given the Mission page
 		And I add an obstacle at 25x31
@@ -94,6 +96,7 @@ Feature: Beginning the Mission
 		When I fire a missile
 		Then 25x31 will display the ground
 		
+	@rockets
 	Scenario: Firing a Rocket beyond the map border
 		Given the Mission page
 		And the rover moves forward 25 steps

@@ -53,4 +53,4 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   page-object
-  rspec (< 3.0.0)
+  rspec (= 2.99)
